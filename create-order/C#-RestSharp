@@ -1,0 +1,20 @@
+var client = new RestClient("https://api.payriff.com/api/v2/createOrder");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Authorization", "SIZIN_SECRET_KEY(dashboarda)");
+var body = @"{" + "\n" +
+@"    ""body"": {" + "\n" +
+@"        ""amount"": 1.20," + "\n" +
+@"        ""currencyType"": ""AZN""," + "\n" +
+@"        ""description"": ""Example""," + "\n" +
+@"        ""language"": ""AZ""," + "\n" +
+@"        ""approveURL"": ""approveURL""," + "\n" +
+@"        ""cancelURL"": ""cancelURL""," + "\n" +
+@"        ""declineURL"": ""https://decline,com""" + "\n" +
+@"    }," + "\n" +
+@"    ""merchant"": ""ES100000 (dashborda)""" + "\n" +
+@"}";
+request.AddParameter("application/json", body,  ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
