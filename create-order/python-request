@@ -1,0 +1,25 @@
+import requests
+import json
+
+url = "https://api.payriff.com/api/v2/createOrder"
+
+payload = json.dumps({
+  "body": {
+    "amount": 1.2,
+    "currencyType": "AZN",
+    "description": "Example",
+    "language": "AZ",
+    "approveURL": "approveURL",
+    "cancelURL": "cancelURL",
+    "declineURL": "https://decline,com"
+  },
+  "merchant": "ES100000 (dashborda)"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'SIZIN_SECRET_KEY(dashboarda)'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)

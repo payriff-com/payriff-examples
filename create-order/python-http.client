@@ -1,0 +1,24 @@
+import http.client
+import json
+
+conn = http.client.HTTPSConnection("api.payriff.com")
+payload = json.dumps({
+  "body": {
+    "amount": 1.2,
+    "currencyType": "AZN",
+    "description": "Example",
+    "language": "AZ",
+    "approveURL": "approveURL",
+    "cancelURL": "cancelURL",
+    "declineURL": "https://decline,com"
+  },
+  "merchant": "ES100000 (dashborda)"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'SIZIN_SECRET_KEY(dashboarda)'
+}
+conn.request("POST", "/api/v2/createOrder", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
