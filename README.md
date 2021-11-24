@@ -1,6 +1,6 @@
 # payriff-examples
 
-This is examples for payriff
+This is examples for payriff for api v2
 
 # Authorization
 
