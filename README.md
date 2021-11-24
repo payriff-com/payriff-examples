@@ -28,6 +28,7 @@ example:
     },
     "merchant": "ES100000 (dashborda)"
  }
+ ```
 
 # Unofficial Examples and guides
 
