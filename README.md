@@ -31,6 +31,27 @@ cardStorage ture in request body:
  }
  ```
 
+# Invoice
+if you want create invoice 
+POST "https://api.payriff.com/api/v2/invoices
+
+```json
+ {
+    "body": {
+        "amount": 1.2,
+        "currencyType": "AZN",
+        "description": "Example",
+        "email": "test@test.com",
+        "expireDate": "2023-02-03T13:38:44.332Z",
+        "fullName": "Musteri Musteri",
+        "languageType": "AZ",
+        "phoneNumber": "994771112233",
+        "sendSms": true
+    },
+    "merchant": "ES100000 (dashborda)"
+ }
+ ```
+
 # Unofficial Examples and guides
 
 1. https://github.com/nasimic/payriff   (Laravel-PHP)
